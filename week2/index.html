@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <title>Grocery List</title>
+  <title>Employee List</title>
 </head>
 <body ng-controller="listCtrl">
 	<div class="row">
@@ -13,7 +13,8 @@
 				
 			<div class="form-group col-lg-12">
 				<label>First Name</label>
-				<input type="" name="" class="form-control" id="" value="">
+				<input type="" name="" class="form-control"  ng-model="fName"/>
+				<input type="submit" ng-click="addEmployee()"/>
 			</div>
 				
 			<div class="form-group col-lg-6">

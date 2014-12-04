@@ -1,5 +1,16 @@
 var app= angular.module('employeeList',[])
-	.controller("listCtrl", function($scope){
-		$scope.employees = [{"fName":"John","lName":"Doe","job":"Tech","status":"Current","email":"johnD@gmail.com","img":"http://lorempixel.com/300/300/people/"},
-							{"fName":"John","lName":"Doe","job":"Tech","status":"Current","email":"johnD@gmail.com"}];
+	.controller("listCtrl", function($scope,dataService){
+		
+    $scope.employees = dataService.getEmps();
+
+    $scope.addEmployee = function(){
+      dataService.addEmployee($scope.empObject);
+
+      $scope.empObject = {"fName":$scope.fName};
+      $scope.fName = '';
+   
+
+    };
+
+
 	});	
