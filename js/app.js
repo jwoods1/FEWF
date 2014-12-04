@@ -2,7 +2,7 @@
 var app= angular.module('groceryList',[]);
 
 
-app.controller("listCtrl", function($scope){
+app.controller("listCtrl", ['$scope', function($scope){
 	$scope.items = [
 		{'name':'Bananas','done':false},
 		{'name':'Bread','done':false},
@@ -12,11 +12,11 @@ app.controller("listCtrl", function($scope){
 	];
 
 	$scope.addItem = function(){
-		$scope.items.push({name:$scope.formItemText, done:false});
-		$scope.formItemText="";
+		$scope.items.push({name: $scope.item});
+		$scope.item ="";
 	};
 	$scope.removeItem = function(index){
     	$scope.items.splice(index, 1);
   	}
 
-});
+}]);
