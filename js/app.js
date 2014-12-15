@@ -20,7 +20,7 @@ var app= angular.module('employeeList',['ngRoute','ngAnimate'])
     });
 })
 
-.controller("listCtrl", function($scope,dataService,$routeParams){
+.controller("listCtrl", function($scope,dataService,$routeParams,$location){
 	
 	$scope.items = dataService.getItems();
 
@@ -36,7 +36,7 @@ var app= angular.module('employeeList',['ngRoute','ngAnimate'])
 
   $scope.editItem = function(item){
       dataService.editItem(item);
-      redirectTo: "/edit.html";
+      $location.path("/edit.html/"item);
   }
 
 });
