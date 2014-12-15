@@ -1,4 +1,4 @@
-angular.module("employeeList").service("dataService",function($location){
+angular.module("employeeList").service("dataService",function(){
 
   var itemArray = [];
 
