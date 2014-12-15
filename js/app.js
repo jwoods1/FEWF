@@ -1,5 +1,5 @@
 // Main js
-var app= angular.module('employeeList',['ngRoute','ngAnimate'])
+var app= angular.module('employeeList',['ngRoute','ngAnimate','$location'])
 
 .config(function($routeProvider){
 
