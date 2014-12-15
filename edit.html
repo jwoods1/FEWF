@@ -1,0 +1,7 @@
+<form name="addEmployee" ng-submit="editItem()" novalidate class="col-md-4">
+  <h4>Edit Employee Form</h4>
+  <input class="add-input" placeholder="Full Name" type="text" ng-model="item.name" ng-model-instant  required value="{{item.name}}"/>
+  <input class="add-input" placeholder="Department" type="text" ng-model="item.dep" ng-model-instant  required value="{{item.dep}}"/>
+  <input class="add-input" type="date" ng-model="item.start" ng-model-instant  required value="{{item.start}}"/>
+  <button type="submit" class="btn btn-success" ng-disabled="addEmployee.$invalid">Save</button>
+</form>

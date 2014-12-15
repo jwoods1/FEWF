@@ -1,0 +1,20 @@
+  <h3>Current Employee List</h3>
+  <table class="table table-striped ">
+    <tr ng-repeat='item in items'> 
+      <td>
+        <span>{{item.name}}</span>
+      </td>
+      <td>
+        <span>{{item.dep}}</span>
+      </td>
+      <td>
+        <span>{{item.start}}</span>
+      </td>
+      <td>
+        <span data-ng-click="editItem(item)" class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+      </td>
+      <td>
+        <span data-ng-click="removeItem(item)" class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span>
+      </td>
+    </tr>
+  </table>

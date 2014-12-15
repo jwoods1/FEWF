@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en"  ng-app="groceryList">
+<html lang="en"  ng-app="employeeList">
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <title>Grocery List</title>
+  <title>Employee Directory</title>
 </head>
 <body ng-controller="listCtrl">
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -16,36 +16,31 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Grocery Shoppin List</a>
+          <a class="navbar-brand" href="#">Employee Directory</a>
           
         </div>
         <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="#/employee">Add</a></li>
+          </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><span class="badge ">{{items.length}}</span></li>
+            <li><a href="">Employee Count <span class="badge ">{{items.length}}</span></a></li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-3">
-        <h3>List</h3>
-        <table class="table table-striped ">
-          <tr ng-repeat='item in items'> 
-            <td>
-              <span class="done-{{item.done}}">{{item.name}}</span>
-              <span data-ng-click="removeItem($index)" class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span>
-            </td>
-          </tr>
-        </table>
-        <form name="addGrocery" ng-submit="addItem()" novalidate>
-          <input class="add-input" placeholder="Add Item" type="text" ng-model="item" ng-model-instant  required/>
-          <button type="submit" class="btn btn-success" ng-disabled="addGrocery.$invalid">Add</button>
-        </form>
-      </div><!-- /.container -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 pull-right slide" ng-view>
+        </div><!-- /.container -->
+      </div>
     </div>
 <script src="js/libs/angular.min.js"></script>
+<script src="js/libs/angular-route.min.js"></script>
+<script src="js/libs/angular-animate.min.js"></script>
 <script src="js/libs/jquery-2.1.1.min.js"></script>
 <script src="js/libs/bootstrap.min.js"></script>
 <script src="js/app.js"></script>
+<script src="js/data.js"></script>
 </body>
 </html>
