@@ -1,4 +1,4 @@
-angular.module("employeeList").service("dataService",function(){
+angular.module("employeeList").service("dataService",function($location){
 
   var itemArray = [];
 
@@ -18,6 +18,7 @@ angular.module("employeeList").service("dataService",function(){
     localStorage.setItem("itemLS",str);
   }
   this.editItem = function(item){
+    $location.path("/edit.html/"item);
     console.log(item);
     
   }
