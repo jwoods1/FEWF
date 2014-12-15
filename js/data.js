@@ -18,6 +18,7 @@ angular.module("employeeList").service("dataService",function(){
     localStorage.setItem("itemLS",str);
   }
   this.editItem = function(item){
+    console.log(item);
     
   }
 });
