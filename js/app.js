@@ -1,7 +1,7 @@
 // Main js
 var app= angular.module('employeeList',['ngRoute','ngAnimate'])
 
-.config(function($routeProvider){
+.config(function($routeProvider,$locationProvider){
 
     $routeProvider.when("/", {
       templateUrl : "main.html",
@@ -20,7 +20,7 @@ var app= angular.module('employeeList',['ngRoute','ngAnimate'])
     });
 })
 
-.controller("listCtrl", function($scope,dataService,$routeParams){
+.controller("listCtrl", function($scope,dataService,$routeParams,$location){
 	
 	$scope.items = dataService.getItems();
 
@@ -36,6 +36,7 @@ var app= angular.module('employeeList',['ngRoute','ngAnimate'])
 
   $scope.editItem = function(item){
       dataService.editItem(item);
+      $location.path("/edit.html")
   }
 
 });
