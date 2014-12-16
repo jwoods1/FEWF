@@ -36,7 +36,7 @@ var app= angular.module('employeeList',['ngRoute','ngAnimate'])
 
   $scope.editItem = function(item){
       dataService.editItem(item);
-      $location.path("/edit.html")
+      $location.path("/edit.html");
   }
 
 });
